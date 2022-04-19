@@ -1,0 +1,44 @@
+menu "MQTT info"
+
+config MQTT_STATIC_BROKER_ADDR
+    string "Static IP to MQTT broker"
+    default "fd65:da0e:11d0:0:e65f:1ff:fe73:9779"
+
+config UDP_PORT
+    int "MQTT manager port"
+    default 7131
+config UDP_BUFFER_SIZE
+    int "MQTT buffer size"
+    default 128
+
+config MQTT_TOPIC_RHS
+    int "MQTT topic relative humidity signal"
+    default 1
+config MQTT_TOPIC_TOS
+    int "MQTT topic temperature output signal"
+    default 2
+config MQTT_TOPIC_ALS
+    int "MQTT topic ambient light signal"
+    default 3
+config MQTT_TOPIC_UVS
+    int "MQTT topic ultra-violet signal"
+    default 4
+config MQTT_TOPIC_CO2
+    int "MQTT topic carbon dioxide signal"
+    default 5
+config MQTT_TOPIC_TVOC
+    int "MQTT topic total volatile organic compound"
+    default 6
+
+config MQTT_DEVICE_ROLE
+    int "MQTT assigned device role (set 1 for 'sensor', and 2 for 'cmd'"
+    default 1
+
+endmenu
+
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu
+
+module = THREAD_MQTT_SENSOR
+module-str = OpenThread MQTT Sensor

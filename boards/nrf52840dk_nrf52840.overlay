@@ -1,0 +1,25 @@
+
+&pwm0 {
+    ch0-pin = < 33 >;
+};
+
+&arduino_i2c {
+    clock-frequency = < 100000 >;
+    am2301b:i2c-device@38 {
+        compatible = "i2c-device";
+        reg = < 0x38 >;
+        label = "AM2301B";
+    };
+
+    ltr390:i2c-device@53 {
+        compatible = "i2c-device";
+        reg = < 0x53 >;
+        label = "LTR390";
+    };
+
+    sgp30:i2c-device@58 {
+        compatible = "i2c-device";
+        reg = < 0x58 >;
+        label = "SGP30";
+    };
+};
