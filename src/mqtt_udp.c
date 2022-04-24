@@ -25,7 +25,7 @@
 #include "mqtt_udp.h"
 
 
-static char UDP_DEST_ADDR[] = "fd65:da0e:11d0:0:e65f:1ff:fe73:9779";
+static char UDP_DEST_ADDR[] = "fdd2:5b89:6728:0:e65f:1ff:fe73:9779";
 static char UDP_PAYLOAD[CONFIG_UDP_BUFFER_SIZE];
 static uint8_t cursor_pos;
 
